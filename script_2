@@ -1,0 +1,14 @@
+#!/bin/bash
+FILE=chart.yaml
+PATHCHECK=/test
+
+
+if find $PATHCHECK -name $FILE -print -quit |
+   grep -q '^'; then
+  ls -al $PATHCHECK | grep $FILE
+  find $PATHCHECK -name $FILE
+else
+  echo "the file does not exist!"
+  echo "changing directory"
+  cd helm
+fi
